@@ -1,6 +1,7 @@
 const {src, dest, series, watch } = require(`gulp`),
     CSSLinter = require(`gulp-stylelint`),
     jsLinter = require(`gulp-eslint`),
+    babel = require(`gulp-babel`),
     htmlCompressor = require(`gulp-htmlmin`);
 
 let compressHTML = () => {
@@ -24,6 +25,14 @@ let lintJS = () => {
         .pipe(jsLinter())
         .pipe(jsLinter.formatEach(`compact`));
 };
+
+let transpileJSForDev = () => {
+    return src(`js/*.js`)
+        .pipe(babel())
+        .pipe(dest(`js`));
+};
+
 exports.lintCSS = lintCSS;
 exports.compressHTML = compressHTML;
 exports.lintJS = lintJS;
+exports.transpileJSForDev = transpileJSForDev;
