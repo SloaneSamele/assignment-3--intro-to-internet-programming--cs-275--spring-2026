@@ -2,6 +2,7 @@ const {src, dest, series, watch } = require(`gulp`),
     CSSLinter = require(`gulp-stylelint`),
     jsLinter = require(`gulp-eslint`),
     babel = require(`gulp-babel`),
+    browserSync = require(`browser-sync`),
     htmlCompressor = require(`gulp-htmlmin`),
     reload = browserSync.reload;
 
