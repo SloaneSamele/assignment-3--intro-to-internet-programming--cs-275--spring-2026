@@ -80,3 +80,8 @@ exports.serve = series(
     lintCSS,
     serve
 );
+exports.build = series(
+    compressHTML,
+    compressCSS,
+    transpileJSForProd
+);
