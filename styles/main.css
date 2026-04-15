@@ -10,6 +10,15 @@ nav a {
   text-decoration: none;
   color: #000;
 }
+
+h1 {
+  text-align: center;
+  color: blue;
+}
+
+h2, h3{
+  color: darkblue;
+}
 ul {
   margin: 0;
   background-color: #fff;
