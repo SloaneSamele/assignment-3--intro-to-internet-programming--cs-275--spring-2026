@@ -1,3 +1,4 @@
 let body = document.querySelector(`body`);
-script.setAttribute(`src`, `json/data.json`);
+let script = document.createElement(`script`);
+
 body.appendChild(script);
