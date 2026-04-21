@@ -32,3 +32,7 @@ let showMenu =(event)=>{
     }
 }
 
+let exitModal =(event)=> {
+    modal.style.display = `none`;
+    modalShowing = false;
+}
