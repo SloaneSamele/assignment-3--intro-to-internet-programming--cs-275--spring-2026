@@ -18,3 +18,17 @@ let showModal =(event)=> {
         menuShowing = false;
     }
 }
+
+let showMenu =(event)=>{
+    event.preventDefault();
+
+    if(!menuShowing){
+        menu.style.display = `block`;
+        menuShowing = true;
+    }
+    else{
+        menu.style.display = `none`;
+        menuShowing = false;
+    }
+}
+
