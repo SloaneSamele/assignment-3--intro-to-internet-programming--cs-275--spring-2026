@@ -36,3 +36,6 @@ let exitModal =(event)=> {
     modal.style.display = `none`;
     modalShowing = false;
 }
+showMenuButton.addEventListener(`click`, showMenu);
+showModalButton.addEventListener(`click`, showModal);
+modalPane.addEventListener(`click`, exitModal);
