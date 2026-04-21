@@ -104,14 +104,12 @@ nav > ul > li > ul a {
 }
 
 .modal-panel {
-  position: fixed; /* Takes it out of the <a> flow */
+  position: fixed;
   top: 0;
   right: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 9999;   /* High number to stay above the header */
-  margin: 0;
-  padding: 0;
+  z-index: 10;
 }
 
 .modal-content-pane {
@@ -122,16 +120,15 @@ nav > ul > li > ul a {
   height: 100%;
   background-color: rgb(226, 90, 17);
 
-  /* Flex centering */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .modal-content {
-  box-sizing: border-box; /* Prevents padding from breaking width */
+  box-sizing: border-box;
   width: 80%;
   height: 80%;
   background-color: rgb(233, 58, 169);
-  padding: 20px; /* Reduced from 20% to avoid layout explosion */
+  padding: 10%;
 }
