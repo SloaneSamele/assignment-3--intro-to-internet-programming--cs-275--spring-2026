@@ -6,3 +6,15 @@ let menu = document.querySelector(`nav`);
 let menuShowing = false;
 let modalShowing = false;
 
+let showModal =(event)=> {
+    event.preventDefault();
+
+    if(!modalShowing){
+        modal.style.display = `flex`;
+        modalShowing = true;
+    }
+    else{
+        modal.style.display = `none`;
+        menuShowing = false;
+    }
+}
