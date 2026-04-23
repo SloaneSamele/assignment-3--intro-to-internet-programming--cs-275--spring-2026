@@ -12,7 +12,9 @@ header{
   position: absolute;
   top: 0;
   left: 0;
-  background-color: crimson;
+  /* background-color: crimson; */
+
+  background-color: rgba(86, 73, 73, 0.61);
   z-index: 5;
   width: 100vw;
   height: 100px;
@@ -57,7 +59,7 @@ nav{
   position: sticky;
   top: 50px;
   height: 48px;
-  opacity: 0;
+  opacity: 1;
   z-index: auto;
 
   transition: translate 0.3s cubic-bezier(.91,.21,.57,.61);
@@ -95,13 +97,10 @@ nav > ul > li > ul a{
 /*Side tray*/
 @media (max-width: 736px){
   nav{
-    /* width : 150px; */
-    top: 100px; /* Start below the header */
-    left: 0;
-    height: calc(100vh - 100px);
-    width: 250px;
-    /* Start completely off-screen to the left */
-    transform: translateX(-100%);
+    top: 100px;
+    width : 150px;
+    transform: translateX(-150%);
+    transition: transform 0.4s cubic-bezier(.91,.21,.57,.61), opacity 0.3s;
   }
 
   nav > ul {
@@ -117,7 +116,8 @@ nav > ul > li > ul a{
   nav{
     width: 300px;
     margin: 0 auto;
-    transform: translateY(50px);
+    transform: translateY(50px); /* Tucked under the 100px header */
+    transition: transform 0.4s ease, opacity 0.3s ease;
   }
 
   nav > ul{
@@ -131,7 +131,7 @@ nav > ul > li > ul a{
 .modal-panel{
   position: fixed;
   top: 0;
-  leftt: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
   z-index: 10;
@@ -157,4 +157,10 @@ nav > ul > li > ul a{
   height: 80%;
   background-color: #ffffffff;
   padding: 10%;
+}
+nav.drop-down-slide{
+  transform: translateY(50px);
+}
+nav.side-tray-slide{
+  transform: translateX(40px);
 }
