@@ -23,11 +23,17 @@ let showMenu =(event)=>{
     event.preventDefault();
 
     if(!menuShowing){
-        menu.style.display = `block`;
+        menu.style.opacity = `1`;
+        if(window.innerWidth <= 736){
+            menu.classList.toggle(`side-tray-slide`);
+        }
+        else{
+            menu.classList.toggle(`drop-down-slide`);
+        }
         menuShowing = true;
     }
     else{
-        menu.style.display = `none`;
+        menu.style.opacity = `0`;
         menuShowing = false;
     }
 }
