@@ -8,23 +8,24 @@ body{
   max-width: 100vw;
 }
 
-header {
+header{
   position: absolute;
   top: 0;
   left: 0;
-  background-color: red;
-  z-index: 3;
-  width: auto;
+  background-color: crimson;
+  z-index: 5;
+  width: 100vw;
+  height: 100px;
 }
 
 main{
-  background-color: yellow;
+  background-color: white;
   margin: 10%;
   position: relative;
   z-index: -1;
 }
 
-nav a {
+nav a{
   display: block;
   width: 150px;
   line-height: 48px;
@@ -33,38 +34,42 @@ nav a {
   color: #000;
 }
 
-h1 {
+h1{
   text-align: center;
-  color: blue;
+  color: rgb(98, 63, 10);
 }
 
-h2, h3{
-  color: darkblue;
+h2,
+h3{
+  color: rgb(95, 57, 8);
 }
 
-ul {
+ul{
   margin: 0;
-  background-color: #fff;
   list-style-type: none;
 }
 
-ul li {
+ul li{
   margin-left: -40px;
 }
 
-nav {
+nav{
   position: sticky;
-  top: 0;
+  top: 50px;
   height: 48px;
-  display: none;
+  opacity: 0;
   z-index: auto;
+
+  transition: translate 0.3s cubic-bezier(.91,.21,.57,.61);
+  /* transition: transform 0.4s ease-out, opacity 0.3s ease; */
+
 }
 
-nav a:hover {
+nav a:hover{
   background-color: #177f47;
 }
 
-nav > ul > li {
+nav > ul > li{
   position: relative;
   flex-grow: 1;
   margin: 0;
@@ -72,24 +77,31 @@ nav > ul > li {
   width: 150px;
 }
 
-nav > ul > li:hover > ul {
+nav > ul > li:hover > ul{
   visibility: visible;
 }
 
-nav > ul > li > ul {
+nav > ul > li > ul{
   position: absolute;
   left: 0;
   visibility: hidden;
+  background-color: white;
 }
 
-nav > ul > li > ul a {
+nav > ul > li > ul a{
   height: 48px;
   line-height: 48px;
 }
-
+/*Side tray*/
 @media (max-width: 736px){
   nav{
-    width : 150px;
+    /* width : 150px; */
+    top: 100px; /* Start below the header */
+    left: 0;
+    height: calc(100vh - 100px);
+    width: 250px;
+    /* Start completely off-screen to the left */
+    transform: translateX(-100%);
   }
 
   nav > ul {
@@ -100,13 +112,15 @@ nav > ul > li > ul a {
   }
 }
 
+/*Drop down menu*/
 @media (min-width: 737px){
   nav{
     width: 300px;
     margin: 0 auto;
+    transform: translateY(50px);
   }
 
-  nav > ul {
+  nav > ul{
   display: flex;
   margin: 0;
   padding: 0;
@@ -114,30 +128,30 @@ nav > ul > li > ul a {
   }
 }
 
-.modal-panel {
+.modal-panel{
   position: fixed;
   top: 0;
-  right: 0;
+  leftt: 0;
   width: 100vw;
   height: 100vh;
   z-index: 10;
   display: none;
 }
 
-.modal-content-pane {
+.modal-content-pane{
   position: absolute;
   top: 0;
-  right: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.389);
+  background-color: rgba(86, 73, 73, 0.61);
 
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.modal-content {
+.modal-content{
   box-sizing: border-box;
   width: 80%;
   height: 80%;
