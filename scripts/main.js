@@ -21,19 +21,25 @@ let showModal =(event)=> {
 
 let showMenu =(event)=>{
     event.preventDefault();
-
     if(!menuShowing){
-        menu.style.opacity = `1`;
         if(window.innerWidth <= 736){
-            menu.classList.toggle(`side-tray-slide`);
+            menu.classList.remove('side-tray-slide-close');
+            menu.classList.add('side-tray-slide-open');
         }
         else{
-            menu.classList.toggle(`drop-down-slide`);
+            menu.classList.remove('drop-down-slide-close');
+            menu.classList.add('drop-down-slide-open');
         }
         menuShowing = true;
     }
     else{
-        menu.style.opacity = `0`;
+        if (window.innerWidth <= 736) {
+            menu.classList.remove('side-tray-slide-open');
+            menu.classList.add('side-tray-slide-close');
+        } else {
+            menu.classList.remove('drop-down-slide-open');
+            menu.classList.add('drop-down-slide-close');
+        }
         menuShowing = false;
     }
 }
