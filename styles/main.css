@@ -55,16 +55,10 @@ ul li{
   margin-left: -40px;
 }
 
-nav{
+nav {
   position: sticky;
-  top: 50px;
   height: 48px;
-  opacity: 1;
-  z-index: auto;
-
-  transition: translate 0.3s cubic-bezier(.91,.21,.57,.61);
-  /* transition: transform 0.4s ease-out, opacity 0.3s ease; */
-
+  transition: transform 0.4s ease-in-out, opacity 0.3s ease
 }
 
 nav a:hover{
@@ -100,7 +94,6 @@ nav > ul > li > ul a{
     top: 100px;
     width : 150px;
     transform: translateX(-150%);
-    transition: transform 0.4s cubic-bezier(.91,.21,.57,.61), opacity 0.3s;
   }
 
   nav > ul {
@@ -109,6 +102,10 @@ nav > ul > li > ul a{
   padding: 0;
   list-style-type: none;
   }
+
+  nav.side-tray-slide-open{
+  transform: translateX(0);
+}
 }
 
 /*Drop down menu*/
@@ -116,8 +113,7 @@ nav > ul > li > ul a{
   nav{
     width: 300px;
     margin: 0 auto;
-    transform: translateY(50px); /* Tucked under the 100px header */
-    transition: transform 0.4s ease, opacity 0.3s ease;
+    transform: translateY(-50px);
   }
 
   nav > ul{
@@ -125,6 +121,10 @@ nav > ul > li > ul a{
   margin: 0;
   padding: 0;
   list-style-type: none;
+  }
+
+  nav.drop-down-slide-open{
+    transform: translateY(100px);
   }
 }
 
@@ -157,10 +157,4 @@ nav > ul > li > ul a{
   height: 80%;
   background-color: #ffffffff;
   padding: 10%;
-}
-nav.drop-down-slide{
-  transform: translateY(50px);
-}
-nav.side-tray-slide{
-  transform: translateX(40px);
 }
